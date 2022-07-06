@@ -1,35 +1,43 @@
-import * as React from 'react';
-import type { AppProps } from 'next/app';
 import { CacheProvider, EmotionCache } from '@emotion/react';
-import { ThemeProvider, CssBaseline, createTheme } from '@mui/material';
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
+import { AppProps } from 'next/app';
+import {FC} from 'react';
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-import createEmotionCache from '../utility/createEmotionCache';
-import {darkTheme} from '../styles/theme/dark';
 import '../styles/globals.css';
+import { darkTheme } from '../styles/theme/dark';
+import lightTheme from '../styles/theme/light';
+import createEmotionCache from '../utility/createEmotionCache';
+import { useStore } from '../utility/store';
 export interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
-}
+};
 
 const clientSideEmotionCache = createEmotionCache();
 
-const theme = createTheme(darkTheme);
+const themeDark = createTheme(darkTheme);
+const themeLight = createTheme(lightTheme);
 
-export const App: React.FunctionComponent<MyAppProps> = ({
+export const App: FC<MyAppProps> = ({
   Component,
   pageProps,
   emotionCache = clientSideEmotionCache,
-}) => (
-  <CacheProvider value={emotionCache}>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Component {...pageProps} />
-    </ThemeProvider>
-  </CacheProvider>
-);
+}) => {
+
+  const {app: {darkMode}} = useStore();
+  
+  return (
+    <CacheProvider value={emotionCache}>
+      <ThemeProvider theme={darkMode ? themeDark : themeLight}>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </CacheProvider>
+  );
+};
 
 export default App;

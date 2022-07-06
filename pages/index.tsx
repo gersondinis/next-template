@@ -1,9 +1,11 @@
+import { Stack } from '@mui/material'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import ValtioExample from '../utility/components/ValtioExample'
 
 export const Home: NextPage = () => {
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -14,11 +16,11 @@ export const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          <a href="https://nextjs.org">Next.js</a> template
         </h1>
-        <div className={styles.grid}>
+        <Stack direction={'row'} m={2} gap={2}>
           <ValtioExample/>
-        </div>
+        </Stack>
       </main>
     </div>
   )
