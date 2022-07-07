@@ -1,0 +1,1 @@
+export {default as PostAPI} from './endpoints/post';
