@@ -4,7 +4,7 @@ import {Post} from '../xhr/endpoints/post';
 import {LoadingScreen} from './LoadingScreen';
 
 export const ReactQueryExample = () => {
-  const {data, isLoading} = PostAPI.useGetList<Post[]>();
+  const {data, isLoading} = PostAPI.useGetList();
   const createPostMutation = PostAPI.useCreate();
 
   return (
@@ -13,7 +13,7 @@ export const ReactQueryExample = () => {
       <CardContent>
         <LoadingScreen loading={isLoading || createPostMutation.isLoading} />
         <ul>
-          {data?.slice(-5).map((post: Post) => (
+          {data?.slice(-5).map((post) => (
             <li key={post.id}>{post.title}</li>
           ))}
         </ul>

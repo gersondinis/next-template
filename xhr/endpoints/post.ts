@@ -13,14 +13,14 @@ export const KEYS = {
 export interface Post {
   id?: number;
   title: string;
-  userId: number;
-  body: string;
+  userId?: number;
+  body?: string;
 }
 
 export const endpoints = {
-  ...CRUDFactory({type, endpoint, httpClient}),
+  ...CRUDFactory<Post>({type, endpoint, httpClient}),
   useGetPostComments: (id: number) =>
-    useQuery([type, id, KEYS.COMMENTS], () => httpClient.get(`${endpoint}/${id}/comments`).then(({data}) => data), {
+    useQuery([type, id, KEYS.COMMENTS], () => httpClient.get<Post>(`${endpoint}/${id}/comments`).then(({data}) => data), {
       onError: (e: Error) => {
         snackbarUtils.error(e?.message);
       }

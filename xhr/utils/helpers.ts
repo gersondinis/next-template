@@ -16,21 +16,21 @@ export const CRUD_KEYS = {
   DELETE: 'DELETE'
 };
 
-export const CRUDFactory = ({type, endpoint, httpClient = client}: ICRUDFactoryArgs) => {
+export const CRUDFactory = <T>({type, endpoint, httpClient = client}: ICRUDFactoryArgs) => {
   return {
-    useGetList: <T>() =>
-      useQuery([type, CRUD_KEYS.READ], () => httpClient.get<T>(endpoint).then(({data}) => data), {
+    useGetList: () =>
+      useQuery([type, CRUD_KEYS.READ], () => httpClient.get<T[]>(endpoint).then(({data}) => data), {
         onError: (e: Error) => {
           snackbarUtils.error(e?.message);
         }
       }),
-    useGet: <T>({id}: {id: number}) =>
+    useGet: ({id}: {id: number}) =>
       useQuery([type, id], () => httpClient.get<T>(`${endpoint}/${id}`).then(({data}) => data), {
         onError: (e: Error) => {
           snackbarUtils.error(e?.message);
         }
       }),
-    useCreate: <T>() =>
+    useCreate: () =>
       useMutation([type, CRUD_KEYS.CREATE], (entity: T) => httpClient.post(endpoint, entity), {
         onSuccess: () => {
           snackbarUtils.success('Success');
@@ -40,7 +40,7 @@ export const CRUDFactory = ({type, endpoint, httpClient = client}: ICRUDFactoryA
           snackbarUtils.error(e?.message);
         }
       }),
-    useUpdate: <T>() =>
+    useUpdate: () =>
       useMutation([type, CRUD_KEYS.UPDATE], (id: number, entity: T) => httpClient.patch(`${endpoint}/${id}`, entity), {
         onSuccess: () => {
           snackbarUtils.success('Success');
@@ -50,7 +50,7 @@ export const CRUDFactory = ({type, endpoint, httpClient = client}: ICRUDFactoryA
           snackbarUtils.error(e?.message);
         }
       }),
-    useDelete: <T>() =>
+    useDelete: () =>
       useMutation([type, CRUD_KEYS.DELETE], (id: number) => httpClient.delete(`${endpoint}/${id}`), {
         onSuccess: () => {
           snackbarUtils.success('Success');
