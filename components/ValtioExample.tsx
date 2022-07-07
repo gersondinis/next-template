@@ -37,7 +37,8 @@ export const ValtioExample = () => {
 const styles = {
   container: {
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   counter: {
     display: 'flex',
