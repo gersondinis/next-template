@@ -1,23 +1,17 @@
 import {Button, Card, CardContent, CardHeader, Stack} from '@mui/material';
-import {AxiosError} from 'axios';
 import {PostAPI} from '../xhr';
 import {Post} from '../xhr/endpoints/post';
-import {QueryFeedback} from '../xhr/utils/QueryFeedback';
+import {LoadingScreen} from './LoadingScreen';
 
 export const ReactQueryExample = () => {
-  const {data, error, isLoading, isError} = PostAPI.useGetList<Post[]>();
+  const {data, isLoading} = PostAPI.useGetList<Post[]>();
   const createPostMutation = PostAPI.useCreate();
 
   return (
     <Card raised>
       <CardHeader title={'react-query'} subheader={'server state management'} />
       <CardContent>
-        <QueryFeedback
-          error={error as AxiosError}
-          isSuccess={createPostMutation.isSuccess}
-          isError={isError}
-          isLoading={isLoading || createPostMutation.isLoading}
-        />
+        <LoadingScreen loading={isLoading || createPostMutation.isLoading} />
         <ul>
           {data?.slice(-5).map((post: Post) => (
             <li key={post.id}>{post.title}</li>

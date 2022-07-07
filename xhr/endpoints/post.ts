@@ -1,4 +1,5 @@
 import {useQuery} from 'react-query';
+import {snackbarUtils} from '../../utility/SnackbarUtils';
 import {httpClient} from '../utils/client';
 import {CRUD_KEYS, generateCrudEndpoints} from '../utils/helpers';
 
@@ -11,13 +12,19 @@ export const KEYS = {
 
 export interface Post {
   id?: number;
-  title: string
+  title: string;
+  userId: number;
+  body: string;
 }
 
 export const endpoints = {
   ...generateCrudEndpoints({type, endpoint, httpClient}),
   useGetPostComments: (id: number) =>
-    useQuery([type, id, KEYS.COMMENTS], () => httpClient.get(`${endpoint}/${id}/comments`).then(({data}) => data))
+    useQuery([type, id, KEYS.COMMENTS], () => httpClient.get(`${endpoint}/${id}/comments`).then(({data}) => data), {
+      onError: (e: Error) => {
+        snackbarUtils.error(e?.message);
+      }
+    })
 };
 
 export default endpoints;

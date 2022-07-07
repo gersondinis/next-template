@@ -14,7 +14,8 @@ import lightTheme from '../styles/theme/light';
 import createEmotionCache from '../utility/createEmotionCache';
 import {useStore} from '../utility/store';
 import {ReactQueryProvider} from '../xhr/utils/ReactQueryProvider';
-import { SnackbarProvider } from '../utility/SnackbarProvider';
+import {SnackbarProvider} from '../utility/SnackbarProvider';
+import {SnackbarUtilsConfigurator} from '../utility/SnackbarUtils';
 
 export interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
@@ -31,6 +32,7 @@ export const App: FC<MyAppProps> = ({Component, pageProps, emotionCache = client
   return (
     <ReactQueryProvider>
       <SnackbarProvider>
+        <SnackbarUtilsConfigurator />
         <CacheProvider value={emotionCache}>
           <ThemeProvider theme={darkMode ? themeDark : themeLight}>
             <CssBaseline />
