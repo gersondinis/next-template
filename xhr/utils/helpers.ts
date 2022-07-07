@@ -1,9 +1,9 @@
 import {AxiosInstance} from 'axios';
 import {useMutation, UseMutationOptions, useQuery, UseQueryOptions} from 'react-query';
-import {snackbarUtils} from '../../utility/SnackbarUtils';
+import {snackbarUtils} from '../../utility/notistack/SnackbarUtils';
 import {queryClient, httpClient as client} from './client';
 
-export interface IGenerateCrudEndpointsArgs {
+export interface ICRUDFactoryArgs {
   type: any;
   endpoint: string;
   httpClient?: AxiosInstance;
@@ -16,7 +16,7 @@ export const CRUD_KEYS = {
   DELETE: 'DELETE'
 };
 
-export const generateCrudEndpoints = ({type, endpoint, httpClient = client}: IGenerateCrudEndpointsArgs) => {
+export const CRUDFactory = ({type, endpoint, httpClient = client}: ICRUDFactoryArgs) => {
   return {
     useGetList: <T>() =>
       useQuery([type, CRUD_KEYS.READ], () => httpClient.get<T>(endpoint).then(({data}) => data), {

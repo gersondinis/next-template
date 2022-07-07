@@ -11,11 +11,11 @@ import '@fontsource/roboto/700.css';
 import '../styles/globals.css';
 import {darkTheme} from '../styles/theme/dark';
 import lightTheme from '../styles/theme/light';
-import createEmotionCache from '../utility/createEmotionCache';
+import createEmotionCache from '../utility/mui/createEmotionCache';
 import {useStore} from '../utility/store';
 import {ReactQueryProvider} from '../xhr/utils/ReactQueryProvider';
-import {SnackbarProvider} from '../utility/SnackbarProvider';
-import {SnackbarUtilsConfigurator} from '../utility/SnackbarUtils';
+import {SnackbarProvider} from '../utility/notistack/SnackbarProvider';
+import {SnackbarUtilsConfigurator} from '../utility/notistack/SnackbarUtils';
 
 export interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
