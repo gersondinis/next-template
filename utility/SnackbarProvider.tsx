@@ -4,7 +4,7 @@ import {SnackbarKey, SnackbarProvider as Provider} from 'notistack';
 import {Close} from '@mui/icons-material';
 
 export const SnackbarProvider: FC<ISnackbarProvider> = ({children}) => {
-  const ref = useRef<{closeSnackbar: (k: SnackbarKey) => void} | undefined>();
+  const ref = useRef<Provider>();
   const onClickDismiss = (key: SnackbarKey) => {
     ref.current?.closeSnackbar(key);
   };
