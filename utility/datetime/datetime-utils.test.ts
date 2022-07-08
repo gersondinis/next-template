@@ -20,6 +20,7 @@ import {
   TimeZone
 } from './datetime-utils';
 
+
 describe('Test datetime utils', () => {
   test('It should be able to get current client timezone ID', () => {
     expect(GET_CLIENT_TZ()).toBe(TimeZone.Azores);

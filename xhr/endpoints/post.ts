@@ -3,6 +3,7 @@ import {snackbarUtils} from '../../utility/notistack/SnackbarUtils';
 import {httpClient} from '../utils/client';
 import {CRUD_KEYS, CRUDFactory} from '../utils/helpers';
 
+
 export const type = 'POST';
 export const endpoint = '/posts';
 export const KEYS = {

@@ -3,6 +3,7 @@ import {useMutation, useQuery} from 'react-query';
 import {snackbarUtils} from '../../utility/notistack/SnackbarUtils';
 import {httpClient as client, queryClient} from './client';
 
+
 export interface ICRUDFactoryArgs {
   type: string;
   endpoint: string;

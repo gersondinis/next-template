@@ -1,5 +1,6 @@
 import {store} from './store';
 
+
 export const actions = {
   app: {
     setDarkMode: (enable: boolean) => store.app.darkMode = enable,

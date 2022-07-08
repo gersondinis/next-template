@@ -3,6 +3,7 @@ import {IconButton} from '@mui/material';
 import {SnackbarKey, SnackbarProvider as Provider} from 'notistack';
 import {Close} from '@mui/icons-material';
 
+
 export const SnackbarProvider: FC<ISnackbarProvider> = ({children}) => {
   const ref = useRef<Provider>();
   const onClickDismiss = (key: SnackbarKey) => {

@@ -1,6 +1,7 @@
 import {useSnackbar, VariantType, WithSnackbarProps} from 'notistack';
 import React from 'react';
 
+
 interface IProps {
   setUseSnackbarRef: (showSnackbar: WithSnackbarProps) => void;
 }
