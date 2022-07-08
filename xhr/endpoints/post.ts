@@ -17,7 +17,7 @@ export interface Post {
   body?: string;
 }
 
-export const endpoints = {
+export const PostAPI = {
   ...CRUDFactory<Post>({type, endpoint, httpClient}),
   useGetPostComments: (id: number) =>
     useQuery([type, id, KEYS.COMMENTS], () => httpClient.get<Post>(`${endpoint}/${id}/comments`).then(({data}) => data), {

@@ -1,1 +1,1 @@
-export {default as PostAPI} from './endpoints/post';
+export {PostAPI} from './endpoints/post';

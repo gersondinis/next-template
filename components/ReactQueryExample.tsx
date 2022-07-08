@@ -18,7 +18,7 @@ export const ReactQueryExample = () => {
         </ul>
         <Stack>
           <Button
-            variant='contained'
+            variant={'contained'}
             onClick={() => {
               createPostMutation.mutate({
                 id: Date.now(),

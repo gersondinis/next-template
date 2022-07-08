@@ -16,7 +16,7 @@ export const LoadingScreen: FC<ILoadingScreen> = ({loading = false, onClick}) =>
       onClick={onClick}
     >
       <DialogContent>
-        <CircularProgress color='primary' />
+        <CircularProgress color={'primary'} />
       </DialogContent>
     </Dialog>
   );
