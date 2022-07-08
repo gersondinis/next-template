@@ -1,6 +1,5 @@
 import {Button, Card, CardContent, CardHeader, Stack} from '@mui/material';
 import {PostAPI} from '../xhr';
-import {Post} from '../xhr/endpoints/post';
 import {LoadingScreen} from './LoadingScreen';
 
 export const ReactQueryExample = () => {

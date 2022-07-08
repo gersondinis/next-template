@@ -1,4 +1,4 @@
-import store from './store';
+import {store} from './store';
 
 export const actions = {
   app: {
@@ -8,5 +8,3 @@ export const actions = {
   incCount: () => store.count++,
   decCount: () => store.count--,
 };
-
-export default actions;

@@ -1,10 +1,10 @@
 import {AxiosInstance} from 'axios';
-import {useMutation, UseMutationOptions, useQuery, UseQueryOptions} from 'react-query';
+import {useMutation, useQuery} from 'react-query';
 import {snackbarUtils} from '../../utility/notistack/SnackbarUtils';
-import {queryClient, httpClient as client} from './client';
+import {httpClient as client, queryClient} from './client';
 
 export interface ICRUDFactoryArgs {
-  type: any;
+  type: string;
   endpoint: string;
   httpClient?: AxiosInstance;
 }

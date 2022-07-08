@@ -7,5 +7,3 @@ export const store = createStore(initialState);
 export const useStore = () => useSnapshot(store);
 
 devtools(store, {name: 'STORE', enabled: true});
-
-export default store;
