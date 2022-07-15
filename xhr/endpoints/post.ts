@@ -1,5 +1,5 @@
 import {useQuery} from 'react-query';
-import {snackbarUtils} from '../../utility/notistack/SnackbarUtils';
+import {toast} from 'react-toastify';
 import {httpClient} from '../utils/client';
 import {CRUD_KEYS, CRUDFactory} from '../utils/helpers';
 
@@ -23,7 +23,7 @@ export const PostAPI = {
   useGetPostComments: (id: number) =>
     useQuery([type, id, KEYS.COMMENTS], () => httpClient.get<Post>(`${endpoint}/${id}/comments`).then(({data}) => data), {
       onError: (e: Error) => {
-        snackbarUtils.error(e?.message);
+        toast.error(e?.message);
       }
     })
 };
