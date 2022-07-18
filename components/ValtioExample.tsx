@@ -18,7 +18,7 @@ export const ValtioExample = () => {
 
   return (
     <Card raised>
-      <CardHeader avatar={<DarkModeIcon />} title={'valtio'} subheader={'state management'} />
+      <CardHeader avatar={<DarkModeIcon />} title={'Valtio'} subheader={'State management'} />
       <CardContent>
         <Box sx={styles.container}>
           <IconButton onClick={actions.decCount}>

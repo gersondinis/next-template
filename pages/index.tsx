@@ -1,6 +1,7 @@
 import {Stack} from '@mui/material';
 import {NextPage} from 'next';
 import Head from 'next/head';
+import {I18nExample} from '../components/I18nExample';
 import {ReactQueryExample} from '../components/ReactQueryExample';
 import {ValtioExample} from '../components/ValtioExample';
 import styles from '../styles/Home.module.css';
@@ -22,6 +23,7 @@ export const Home: NextPage = () => {
         <Stack direction={'row'} m={2} gap={2}>
           <ValtioExample />
           <ReactQueryExample />
+          <I18nExample/>
         </Stack>
       </main>
     </div>

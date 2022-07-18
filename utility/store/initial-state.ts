@@ -1,6 +1,10 @@
+import {Language} from './types';
+
+
 export const initialState = {
   app: {
-    darkMode: false
+    darkMode: false,
+    language: Language.EN
   },
-  count: 0,
+  count: 0
 };

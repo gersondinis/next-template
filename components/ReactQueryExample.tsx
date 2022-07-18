@@ -9,7 +9,7 @@ export const ReactQueryExample = () => {
 
   return (
     <Card raised>
-      <CardHeader title={'react-query'} subheader={'server state management'} />
+      <CardHeader title={'React query'} subheader={'Server state management'} />
       <CardContent>
         <LoadingScreen loading={isLoading || createPostMutation.isLoading} />
         <ul>
