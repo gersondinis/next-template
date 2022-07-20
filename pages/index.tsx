@@ -16,11 +16,11 @@ export const Home: NextPage = () => {
         <link rel={'icon'} href={'/favicon.ico'} />
       </Head>
 
-      <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'}>
+      <Box sx={styles.root}>
         <Typography variant={'h1'}>
           <Link href={'https://nextjs.org'} sx={styles.titleLink}>Next.js</Link> template
         </Typography>
-        <Stack direction={{xs: 'column', xl: 'row'}} m={2} gap={2}>
+        <Stack sx={styles.examplesContainer}>
           <ValtioExample />
           <ReactQueryExample />
           <ReactHookFormExample />
@@ -32,10 +32,23 @@ export const Home: NextPage = () => {
 };
 
 const styles = {
+  root: {
+    gap: 4,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    minHeight: '100vh'
+  },
   titleLink: {
     fontWeight: 'bold',
     color: 'primary.main',
     textDecoration: 'none'
+  },
+  examplesContainer: {
+    direction: {xs: 'column', xl: 'row'},
+    m: 2,
+    gap: 2
   }
 };
 
