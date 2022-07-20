@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 - Run the development server: `yarn dev`
-- Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.1
+- Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ### In order to use lokalise
 - Install [`lokalise-cli`](https://github.com/lokalise/lokalise-cli-2-go)
