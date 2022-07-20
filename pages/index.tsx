@@ -1,33 +1,42 @@
-import {Stack} from '@mui/material';
+import {Box, Link, Stack, Typography} from '@mui/material';
 import {NextPage} from 'next';
 import Head from 'next/head';
 import {I18nExample} from '../components/I18nExample';
+import {ReactHookFormExample} from '../components/ReactHookFormExample/ReactHookFormExample';
 import {ReactQueryExample} from '../components/ReactQueryExample';
 import {ValtioExample} from '../components/ValtioExample';
-import styles from '../styles/Home.module.css';
 
 
 export const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
+        <title>Next App Template</title>
         <meta name={'description'} content={'Template'} />
         <link rel={'icon'} href={'/favicon.ico'} />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          <a href={'https://nextjs.org'}>Next.js</a> template
-        </h1>
-        <Stack direction={'row'} m={2} gap={2}>
+      <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'}>
+        <Typography variant={'h1'}>
+          <Link href={'https://nextjs.org'} sx={styles.titleLink}>Next.js</Link> template
+        </Typography>
+        <Stack direction={{xs: 'column', xl: 'row'}} m={2} gap={2}>
           <ValtioExample />
           <ReactQueryExample />
-          <I18nExample/>
+          <ReactHookFormExample />
+          <I18nExample />
         </Stack>
-      </main>
-    </div>
+      </Box>
+    </>
   );
+};
+
+const styles = {
+  titleLink: {
+    fontWeight: 'bold',
+    color: 'primary.main',
+    textDecoration: 'none'
+  }
 };
 
 export default Home;

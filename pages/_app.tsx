@@ -9,7 +9,6 @@ import {FC, useEffect} from 'react';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {I18nProvider} from '../i18n/I18nProvider';
-import '../styles/globals.css';
 import {darkTheme} from '../styles/theme/dark';
 import {lightTheme} from '../styles/theme/light';
 import {createEmotionCache} from '../utility/mui/createEmotionCache';
