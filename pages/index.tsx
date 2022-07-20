@@ -46,8 +46,8 @@ const styles = {
     textDecoration: 'none'
   },
   examplesContainer: {
-    direction: {xs: 'column', xl: 'row'},
-    m: 2,
+    flexDirection: {xs: 'column', xl: 'row'},
+    margin: 2,
     gap: 2
   }
 };
