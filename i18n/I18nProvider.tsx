@@ -8,6 +8,7 @@ import {createIntl, createIntlCache, RawIntlProvider} from 'react-intl';
 import {FC, ReactNode, useMemo} from 'react';
 import {useStore} from '../utility/store';
 
+
 const cache = createIntlCache();
 
 export const i18nMessages = {
