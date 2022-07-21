@@ -42,7 +42,7 @@ export const CRUDFactory = <T>({type, endpoint, httpClient = client}: ICRUDFacto
         }
       }),
     useUpdate: () =>
-      useMutation([type, CRUD_KEYS.UPDATE], (id: number, entity: T) => httpClient.patch(`${endpoint}/${id}`, entity), {
+      useMutation([type, CRUD_KEYS.UPDATE], ({id, entity}: {id: number, entity: T}) => httpClient.patch(`${endpoint}/${id}`, entity), {
         onSuccess: () => {
           toast.success('Success');
           queryClient.invalidateQueries([type, CRUD_KEYS.READ]);
