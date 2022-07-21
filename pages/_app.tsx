@@ -10,7 +10,7 @@ import {FC, useEffect} from 'react';
 import {ToastContainer} from 'react-toastify';
 import {I18nProvider} from '../i18n/I18nProvider';
 import {clientSideEmotionCache, themeDark, themeLight} from '../utility/mui/mui-utils';
-import {actions, useStore} from '../utility/store';
+import {actions, useStore} from '../store';
 import {ReactQueryProvider} from '../xhr/utils/ReactQueryProvider';
 
 

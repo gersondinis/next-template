@@ -3,10 +3,10 @@ import pt from './locale/pt.json';
 import es from './locale/es.json';
 import it from './locale/it.json';
 import pl from './locale/pl_PL.json';
-import {Language} from '../utility/store/types';
+import {Language} from '../store/types';
 import {createIntl, createIntlCache, RawIntlProvider} from 'react-intl';
 import {FC, ReactNode, useMemo} from 'react';
-import {useStore} from '../utility/store';
+import {useStore} from '../store';
 
 
 const cache = createIntlCache();

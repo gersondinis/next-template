@@ -2,8 +2,8 @@ import {Language as LanguageIcon} from '@mui/icons-material';
 import {Card, CardContent, CardHeader, Chip, Stack, Typography} from '@mui/material';
 import {FormattedMessage} from 'react-intl';
 import {i18nMessages} from '../i18n/I18nProvider';
-import {actions, useStore} from '../utility/store';
-import {Language} from '../utility/store/types';
+import {actions, useStore} from '../store';
+import {Language} from '../store/types';
 
 
 export const I18nExample = () => {

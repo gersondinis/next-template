@@ -1,6 +1,6 @@
 import {Add, Remove, DarkMode, LightMode} from '@mui/icons-material';
 import {Box, Card, CardContent, CardHeader, IconButton} from '@mui/material';
-import {actions, useStore} from '../utility/store';
+import {actions, useStore} from '../store';
 
 
 export const DarkModeIcon = () => {
