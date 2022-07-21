@@ -14,10 +14,6 @@ import {actions, useStore} from '../utility/store';
 import {ReactQueryProvider} from '../xhr/utils/ReactQueryProvider';
 
 
-export interface MyAppProps extends AppProps {
-  emotionCache?: EmotionCache;
-}
-
 export const App: FC<MyAppProps> = ({Component, pageProps, emotionCache = clientSideEmotionCache}) => {
   const {app: {darkMode}} = useStore();
 
@@ -37,5 +33,9 @@ export const App: FC<MyAppProps> = ({Component, pageProps, emotionCache = client
     </ReactQueryProvider>
   );
 };
+
+export interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache;
+}
 
 export default App;

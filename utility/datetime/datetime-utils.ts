@@ -19,7 +19,6 @@ export type UnsanitizedDatetime = string; // - ex. "2021-10-03T12:00:00+00:00"
 export type LocalTime = string; // - ex. "07:40:00"
 export type LocalDuration = string; // - ex. "26:62:00"
 export type ServerDuration = string; // - ex. "PT2H3M"
-export type FlightId = string; // - ex. "220106S42280BOS"
 
 export enum Format {
   DATETIME_FORMAT = 'yyyy-MM-dd HH:mm:ss',
