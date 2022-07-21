@@ -4,7 +4,7 @@ import createEmotionServer from '@emotion/server/create-instance';
 import {createEmotionCache} from '../utility/mui/mui-utils';
 
 
-export default class MyDocument extends Document {
+export class MyDocument extends Document {
   render() {
     return (
       <Html lang={'en'}>
@@ -85,3 +85,5 @@ MyDocument.getInitialProps = async (ctx) => {
     ],
   };
 };
+
+export default MyDocument;
