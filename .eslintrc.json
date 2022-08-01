@@ -11,12 +11,44 @@
   ],
   "rules": {
     "quotes": ["error", "single"],
-    "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
     "import/no-default-export": "error",
     "import/newline-after-import": ["error", {"count": 2}],
     "no-trailing-spaces": "error",
-    "react/jsx-curly-brace-presence": [1, {"props": "always", "children": "ignore", "propElementValues": "ignore"}]
+    "react/jsx-curly-brace-presence": ["warn", {"props": "always", "children": "ignore", "propElementValues": "ignore"}],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/no-inferrable-types": "warn",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/member-delimiter-style": ["error", {
+        "multiline": {
+            "delimiter": "semi",
+            "requireLast": true
+        },
+        "singleline": {
+            "delimiter": "comma",
+            "requireLast": true
+        },
+        "overrides": {
+            "interface": {
+                "multiline": {
+                    "delimiter": "semi",
+                    "requireLast": true
+                }
+            }
+        }
+    }],
+    "comma-dangle": [
+        "error",
+        {
+            "arrays": "never",
+            "objects": "only-multiline",
+            "imports": "never",
+            "exports": "never",
+            "functions": "never"
+        }
+    ]
   },
   "overrides": [
     {

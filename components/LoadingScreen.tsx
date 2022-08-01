@@ -22,6 +22,6 @@ export interface ILoadingScreen {
 const styles = {
   paper: {
     backgroundColor: 'transparent',
-    boxShadow: 'none'
-  }
+    boxShadow: 'none',
+  },
 };

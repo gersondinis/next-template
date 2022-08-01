@@ -38,18 +38,18 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    minHeight: '100vh'
+    minHeight: '100vh',
   },
   titleLink: {
     fontWeight: 'bold',
     color: 'primary.main',
-    textDecoration: 'none'
+    textDecoration: 'none',
   },
   examplesContainer: {
     flexDirection: {xs: 'column', xl: 'row'},
     margin: 2,
-    gap: 2
-  }
+    gap: 2,
+  },
 };
 
 export default Home;
