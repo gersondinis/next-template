@@ -2,10 +2,10 @@ import * as yup from 'yup';
 
 
 export interface IFormValues {
-  firstName: string
-  lastName: string
-  withEmail: string
-  email: string
+  firstName: string;
+  lastName: string;
+  withEmail: string;
+  email: string;
 }
 
 export const schema = yup.object().shape({
