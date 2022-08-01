@@ -1,24 +1,15 @@
-import {Add, Remove, DarkMode, LightMode} from '@mui/icons-material';
+import {Add, Remove} from '@mui/icons-material';
 import {Box, Card, CardContent, CardHeader, IconButton} from '@mui/material';
 import {actions, useStore} from '../store';
+import {DarkModeToggleButton} from './DarkModeToggleButton/DarkModeToggleButton';
 
-
-export const DarkModeIcon = () => {
-  const {app: {darkMode}} = useStore();
-
-  return (
-    <IconButton onClick={actions.app.toggleDarkMode} size={'large'}>
-      {darkMode ? <LightMode /> : <DarkMode />}
-    </IconButton>
-  );
-};
 
 export const ValtioExample = () => {
   const {count} = useStore();
 
   return (
     <Card raised>
-      <CardHeader avatar={<DarkModeIcon />} title={'Valtio'} subheader={'State management'} />
+      <CardHeader avatar={<DarkModeToggleButton />} title={'Valtio'} subheader={'State management'} />
       <CardContent>
         <Box sx={styles.container}>
           <IconButton onClick={actions.decCount}>
